@@ -2,7 +2,7 @@ use inc::Module::Install;
 name 'Plack-Middleware-Auth-QueryString';
 all_from 'lib/Plack/Middleware/Auth/QueryString.pm';
 
-# requires '';
+requires 'Plack';
 
 tests 't/*.t';
 author_tests 'xt';
