@@ -47,15 +47,22 @@ __END__
 
 =head1 NAME
 
-Plack::Middleware::Auth::QueryString -
+Plack::Middleware::Auth::QueryString - simple query string authentication
 
 =head1 SYNOPSIS
 
   use Plack::Middleware::Auth::QueryString;
+  use Plack::Builder;
+  my $app = sub { ... };
+
+  builder {
+    enable "Auth::QueryString", password => 'your password here';
+    $app;
+  };
 
 =head1 DESCRIPTION
 
-Plack::Middleware::Auth::QueryString is
+Plack::Middleware::Auth::QueryString is query string authentication handler for Plack
 
 =head1 AUTHOR
 
