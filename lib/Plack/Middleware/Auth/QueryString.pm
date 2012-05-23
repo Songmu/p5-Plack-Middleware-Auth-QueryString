@@ -57,13 +57,28 @@ Plack::Middleware::Auth::QueryString - simple query string authentication
   my $app = sub { ... };
 
   builder {
-    enable "Auth::QueryString", password => 'your password here';
+    enable "Auth::QueryString", password => 'yourpasswordhere';
     $app;
   };
+  # http://example.com/?key=yourpasswordhere
 
 =head1 DESCRIPTION
 
 Plack::Middleware::Auth::QueryString is query string authentication handler for Plack
+
+=head1 CONFIGURATION
+
+=over 4
+
+=item key
+
+Query key for authentication. 'key' is default.
+
+=item password
+
+Query value for authentication.
+
+=back
 
 =head1 AUTHOR
 
