@@ -1,6 +1,7 @@
 package Plack::Middleware::Auth::QueryString;
 use strict;
 use warnings;
+use utf8;
 our $VERSION = '0.01';
 
 use parent qw/Plack::Middleware/;
@@ -25,7 +26,7 @@ sub validate {
     my ($self, $env) = @_;
 
     my $req = Plack::Request->new($env);
-    $req->query_parameters->get($self->key) eq $self->password;
+    $req->query_parameters->get($self->key) ~~ $self->password;
 }
 
 sub unauthorized {
